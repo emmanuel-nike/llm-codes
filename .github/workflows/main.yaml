@@ -1,0 +1,36 @@
+name: Deploy Web Application
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        # Add any other dependencies your script might need
+
+    - name: Build Docker image
+      run: python deploy_docker.py build
+
+    - name: Run tests
+      run: python deploy_docker.py test
+
+    - name: Deploy to Docker container
+      run: python deploy_docker.py deploy
+      env:
+        DOCKER_IMAGE: my-web-app
+        DOCKER_CONTAINER: web-app-container
+        PORT_MAPPING: 80:80
