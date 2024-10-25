@@ -59,7 +59,7 @@ from flask import Flask, jsonify, request
 app = Flask(__name__)
 
 # Initialize the Google Maps client with your API key
-gmaps = googlemaps.Client(key='AIzaSyDppVwzKibbos6ayH7PBNlLP9rQvQFtKJ4')
+gmaps = googlemaps.Client(key='YOUR_API_KEY')
 
 @app.route('/distance', methods=['GET'])
 def get_distance():

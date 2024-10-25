@@ -1,7 +1,7 @@
 import requests
 
 def get_geocode(address):
-    GOOGLE_MAPS_API_KEY = 'AIzaSyDppVwzKibbos6ayH7PBNlLP9rQvQFtKJ4'
+    GOOGLE_MAPS_API_KEY = 'YOUR_API_KEY'
     GEOCODING_URL = 'https://maps.googleapis.com/maps/api/geocode/json'
     params = {
         'address': address,
