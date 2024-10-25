@@ -5,7 +5,7 @@ import sys
 # Configuration parameters
 IMAGE_NAME = "python:3.9-slim"
 CONTAINER_NAME = "web_app_container"
-DOCKERFILE_PATH = "./dockerfile"
+DOCKERFILE_PATH = "./Dockerfile"
 HOST_PORT = 8081  # Port on the host
 CONTAINER_PORT = 5000  # Port in the container
 
